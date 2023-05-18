@@ -24,7 +24,6 @@ function ModalA({ show, handleClose, handleOpen, url, title }) {
       const result = await response.json();
 
       setLoading(false);
-      console.log({ result, page });
 
       if (result?.results?.length > 0) {
         setInfo((prev) => [...prev, ...result?.results]);
@@ -33,8 +32,6 @@ function ModalA({ show, handleClose, handleOpen, url, title }) {
       setError(error?.message);
     }
   };
-
-  console.log(country);
 
   useEffect(() => {
     fetchdata(page);
